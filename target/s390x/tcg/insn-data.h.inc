@@ -349,6 +349,7 @@
     F(0xb30d, DEBR,    RRE,   Z,   e1, e2, new, e1, deb, 0, IF_BFP)
     F(0xb31d, DDBR,    RRE,   Z,   f1, f2, new, f1, ddb, 0, IF_BFP)
     F(0xb34d, DXBR,    RRE,   Z,   x1, x2, new_x, x1, dxb, 0, IF_BFP)
+    F(0xb35b, DIDBR,   RRF_a, Z,   f1, f3, new, f2, didb, 0, IF_BFP)
     F(0xed0d, DEB,     RXE,   Z,   e1, m2_32u, new, e1, deb, 0, IF_BFP)
     F(0xed1d, DDB,     RXE,   Z,   f1, m2_64, new, f1, ddb, 0, IF_BFP)
 /* DIVIDE LOGICAL */

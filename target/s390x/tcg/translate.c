@@ -2288,6 +2288,12 @@ static DisasJumpType op_dxb(DisasContext *s, DisasOps *o)
     return DISAS_NEXT;
 }
 
+static DisasJumpType op_didb(DisasContext *s, DisasOps *o)
+{
+    gen_helper_didb(o->out, tcg_env, o->in1, o->in2);
+    return DISAS_NEXT;
+}
+
 static DisasJumpType op_ear(DisasContext *s, DisasOps *o)
 {
     int r2 = get_field(s, r2);
@@ -5242,6 +5248,12 @@ static void wout_f1(DisasContext *s, DisasOps *o)
 }
 #define SPEC_wout_f1 0
 
+static void wout_f2(DisasContext *s, DisasOps *o)
+{
+    store_freg(get_field(s, r2), o->out);
+}
+#define SPEC_wout_f2 0
+
 static void wout_x1(DisasContext *s, DisasOps *o)
 {
     int f1 = get_field(s, r1);
@@ -5710,6 +5722,12 @@ static void in2_f2(DisasContext *s, DisasOps *o)
     o->in2 = load_freg(get_field(s, r2));
 }
 #define SPEC_in2_f2 0
+
+static void in2_f3(DisasContext *s, DisasOps *o)
+{
+    o->in2 = load_freg(get_field(s, r3));
+}
+#define SPEC_in2_f3 0
 
 static void in2_x2(DisasContext *s, DisasOps *o)
 {

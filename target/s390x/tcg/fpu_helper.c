@@ -287,6 +287,13 @@ Int128 HELPER(dxb)(CPUS390XState *env, Int128 a, Int128 b)
     return RET128(ret);
 }
 
+/* 64-bit FP division, rounding to integer */
+uint64_t HELPER(didb)(CPUS390XState *env, uint64_t f1, uint64_t f2)
+{
+    printf(" -> didb(f1=0x%016lx, f2=0x%016lx)\n", f1, f2);
+    return 42;
+}
+
 /* 32-bit FP multiplication */
 uint64_t HELPER(meeb)(CPUS390XState *env, uint64_t f1, uint64_t f2)
 {
